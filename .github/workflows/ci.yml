@@ -2,24 +2,16 @@ name: CI Demo
 
 on:
   push:
-    branches: [ main ]   # غيّرها لو الفرع عندك اسمه master
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch:
+    branches: [ main ]   # لو فرعك الأساسى master غيّرها لـ master
+  workflow_dispatch:      # تشغيل يدوى من UI
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v4   # ده بيشغّل الكود بتاعك
+        uses: actions/checkout@v4   # الـ Action الرسمى
 
       - name: Hello World
         run: echo "Hello Mohammed from GitHub Actions 🚀"
-
-      - name: Multi line script
-        run: |
-          echo "Step 1: build"
-          echo "Step 2: test"
 
